@@ -1,0 +1,1 @@
+# Benchmark for Maltese NLP 🇲🇹
