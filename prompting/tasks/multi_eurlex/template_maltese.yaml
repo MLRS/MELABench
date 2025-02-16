@@ -1,0 +1,6 @@
+include: template.yaml
+tag:
+  - zero_shot_maltese_instruction
+  - few_shot_maltese_instruction
+task: multi_eurlex (Maltese instruction)
+doc_to_text: "{{text}}\n\nX'inhuma s-suġġetti ta' dan it-test?"

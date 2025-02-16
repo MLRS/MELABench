@@ -1,0 +1,6 @@
+include: template.yaml
+tag:
+  - zero_shot_maltese_instruction
+  - few_shot_maltese_instruction
+task: maltese_news_categories (Maltese instruction)
+doc_to_text: "{{text}}\n\nX'inhu(ma) s-suġġett(i) ta' dan l-artiklu tal-aħbarjiet?"

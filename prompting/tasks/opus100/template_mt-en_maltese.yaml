@@ -1,0 +1,6 @@
+include: template_mt-en.yaml
+tag:
+  - zero_shot_maltese_instruction
+  - few_shot_maltese_instruction
+task: opus100_mt-en (Maltese instruction)
+doc_to_text: "{{mt}}\n\nIt-test preċedenti huwa bil-Malti. Din hija traduzzjoni għall-Ingliż:"

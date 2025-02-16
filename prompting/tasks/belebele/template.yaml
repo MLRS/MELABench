@@ -1,0 +1,14 @@
+include: "code/lm-evaluation-harness/lm_eval/tasks/belebele/_default_template_yaml"
+tag:
+  - zero_shot
+task: belebele_mlt
+dataset_name: mlt_Latn
+dataset_kwargs:
+  trust_remote_code: true
+  cache_dir: hf-cache
+test_split: test
+doc_to_text: "Given the following passage, query, and answer choices, output the letter corresponding to the correct answer.\n###\nPassage:\n{{flores_passage}}\n###\nQuery:\n{{question.strip()}}\n###\nChoices:\n(A) {{mc_answer1}}\n(B) {{mc_answer2}}\n(C) {{mc_answer3}}\n(D) {{mc_answer4}}\n###\nAnswer:\n"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true

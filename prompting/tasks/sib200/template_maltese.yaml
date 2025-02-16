@@ -1,0 +1,6 @@
+include: template.yaml
+tag:
+  - zero_shot_maltese_instruction
+  - few_shot_maltese_instruction
+task: sib200 (Maltese instruction)
+doc_to_text: "Is-suġġett tal-aħbarjiet \"{{text}}\" huwa"

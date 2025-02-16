@@ -1,0 +1,28 @@
+tag:
+  - zero_shot
+  - few_shot
+task: taxi1500
+dataset_path: csv
+dataset_name: null
+dataset_kwargs:
+  data_dir: data/Taxi1500/
+  names: ["id", "label", "text"]
+  sep: "\t"
+  trust_remote_code: true
+  cache_dir: hf-cache
+training_split: train
+validation_split: validation
+test_split: test
+fewshot_config:
+  sampler: first_n
+output_type: multiple_choice
+doc_to_text: "The topic of the verse \"{{text}}\" is "
+doc_to_choice: ["Recommendation", "Faith", "Description", "Sin", "Grace", "Violence"]
+doc_to_target: "{{label}}"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: f1
+    aggregation: !function ../metrics.macro_f1
+    higher_is_better: true
