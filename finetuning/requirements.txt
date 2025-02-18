@@ -1,0 +1,10 @@
+accelerate >= 0.12.0
+datasets >= 1.8.0
+sentencepiece != 0.1.92
+protobuf
+sacrebleu >= 1.4.12
+rouge-score
+torch >= 1.3
+transformers
+evaluate
+nltk
