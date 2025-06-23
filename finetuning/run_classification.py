@@ -421,50 +421,34 @@ def main():
     # for the actual text value.
     # In distributed training, the load_dataset function guarantee that only one local process can concurrently
     # download the dataset.
+    data_files = {}
+    if data_args.train_file is not None:
+        data_files["train"] = data_args.train_file
+        extension = data_args.train_file.split(".")[-1]
+    if data_args.validation_file is not None:
+        data_files["validation"] = data_args.validation_file
+        extension = data_args.validation_file.split(".")[-1]
+    if data_args.test_file is not None:
+        data_files["test"] = data_args.test_file
+        extension = data_args.test_file.split(".")[-1]
     if data_args.dataset_name is not None:
         # Downloading and loading a dataset from the hub.
         raw_datasets = load_dataset(
             data_args.dataset_name,
             data_args.dataset_config_name,
+            data_files=data_files or None,
             cache_dir=model_args.cache_dir,
             token=model_args.token,
             trust_remote_code=model_args.trust_remote_code,
             **data_args.dataset_kwargs,
         )
-        # Try print some info about the dataset
-        logger.info(f"Dataset loaded: {raw_datasets}")
-        logger.info(raw_datasets)
     else:
-        # Loading a dataset from your local files.
-        # CSV/JSON training and evaluation files are needed.
-        data_files = {"train": data_args.train_file, "validation": data_args.validation_file}
-
-        # Get the test dataset: you can provide your own CSV/JSON test file
-        if training_args.do_predict:
-            if data_args.test_file is not None:
-                train_extension = data_args.train_file.split(".")[-1]
-                test_extension = data_args.test_file.split(".")[-1]
-                assert (
-                    test_extension == train_extension
-                ), "`test_file` should have the same extension (csv or json) as `train_file`."
-                data_files["test"] = data_args.test_file
-            else:
-                raise ValueError("Need either a dataset name or a test file for `do_predict`.")
-
-        for key in data_files.keys():
-            logger.info(f"load a local file for {key}: {data_files[key]}")
-
-        if data_args.train_file.endswith(".csv") or data_args.train_file.endswith(".tsv"):
-            # Loading a dataset from local csv files
-            raw_datasets = load_dataset(
-                "csv",
-                data_files=data_files,
-                cache_dir=model_args.cache_dir,
-                token=model_args.token,
-                #names=[data_args.label_column_name] + data_args.text_column_names.split(","),
-                delimiter="\t" if data_args.train_file.endswith(".tsv") else None,
-                **data_args.dataset_kwargs,
-            )
+        dataset_kwargs = data_args.dataset_kwargs
+        if extension == "tsv":
+            builder_name = "csv"  # the "csv" builder reads both .csv and .tsv file
+            dataset_kwargs = {"delimiter": "\t", **dataset_kwargs}
+        elif extension == "jsonl":
+            builder_name = "json"  # the "json" builder reads both .json and .jsonl files
         else:
             builder_name = extension  # e.g. "parquet"
         raw_datasets = load_dataset(
