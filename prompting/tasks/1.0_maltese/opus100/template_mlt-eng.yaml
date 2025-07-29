@@ -1,0 +1,8 @@
+include: ../../1.0_english/opus100/template_mlt-eng.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: opus100_mlt-eng
+doc_to_text: "{{mt}}\n\nIt-test preċedenti huwa bil-Malti. Din hija traduzzjoni għall-Ingliż:"
+metadata:
+  version: 1.0_maltese

@@ -1,6 +1,0 @@
-include: template.yaml
-tag:
-  - zero_shot_maltese_instruction
-  - few_shot_maltese_instruction
-task: eur-lex-sum (Maltese instruction)
-doc_to_text: "{{reference}}\n\nIkteb sommarju bil-Malti għat-test t'hawn fuq:"

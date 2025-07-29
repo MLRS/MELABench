@@ -1,0 +1,19 @@
+group: melabench_fewshot
+task:
+  - group: melabench_nlu
+    task:
+    - sentiment_mlt
+    - sib200_mlt
+    - taxi1500_mlt
+    - maltese_news_categories
+    - multieurlex_mlt
+  - group: melabench_nlg
+    task:
+    - opus100_eng-mlt
+    - flores200_eng-mlt
+    - webnlg_mlt
+    - eurlexsum_mlt
+    - maltese_news_headlines
+num_fewshot: 1
+metadata:
+  version: 1.0_maltese

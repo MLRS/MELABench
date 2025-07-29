@@ -1,5 +1,0 @@
-include: template.yaml
-tag:
-  - zero_shot_maltese_instruction
-task: belebele_mlt (Maltese instruction)
-doc_to_text: "Permezz tas-silta, mistoqsija, u għażliet ta' tweġibiet li ġejjin, agħti l-ittra li tikkorrispondi għat-tweġiba t-tajba.\n###\nPassaġġ:\n{{flores_passage}}\n###\nMistoqsija:\n{{question.strip()}}\n###\nChoices:\n(A) {{mc_answer1}}\n(B) {{mc_answer2}}\n(C) {{mc_answer3}}\n(D) {{mc_answer4}}\n###\nTweġiba:\n"

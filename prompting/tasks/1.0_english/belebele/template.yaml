@@ -1,0 +1,26 @@
+tag:
+  - melabench_zeroshot
+task: belebele_mlt
+dataset_path: facebook/belebele
+dataset_name: mlt_Latn
+dataset_kwargs:
+  trust_remote_code: true
+  cache_dir: hf-cache
+test_split: test
+fewshot_config:
+  sampler: first_n
+output_type: multiple_choice
+should_decontaminate: true
+doc_to_decontamination_query: "{{question}}"
+doc_to_text: "Given the following passage, query, and answer choices, output the letter corresponding to the correct answer.\n###\nPassage:\n{{flores_passage}}\n###\nQuery:\n{{question.strip()}}\n###\nChoices:\n(A) {{mc_answer1}}\n(B) {{mc_answer2}}\n(C) {{mc_answer3}}\n(D) {{mc_answer4}}\n###\nAnswer:\n"
+doc_to_choice: ["A", "B", "C", "D"]
+doc_to_target: "{{['1', '2', '3', '4'].index(correct_answer_num)}}"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0_english

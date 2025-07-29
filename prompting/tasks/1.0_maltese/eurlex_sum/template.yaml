@@ -1,0 +1,8 @@
+include: ../../1.0_english/eurlex_sum/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: eurlexsum_mlt
+doc_to_text: "{{reference}}\n\nIkteb sommarju bil-Malti għat-test t'hawn fuq:"
+metadata:
+  version: 1.0_maltese

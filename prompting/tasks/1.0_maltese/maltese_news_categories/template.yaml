@@ -1,0 +1,8 @@
+include: ../../1.0_english/maltese_news_categories/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: maltese_news_categories
+doc_to_text: "{{text}}\n\nX'inhu(ma) s-suġġett(i) ta' dan l-artiklu tal-aħbarjiet?"
+metadata:
+  version: 1.0_maltese

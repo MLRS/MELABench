@@ -1,0 +1,8 @@
+include: ../../1.0_english/multi_eurlex/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: multieurlex_mlt
+doc_to_text: "{{text}}\n\nX'inhuma s-suġġetti ta' dan it-test?"
+metadata:
+  version: 1.0_maltese

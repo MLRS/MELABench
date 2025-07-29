@@ -1,0 +1,8 @@
+include: ../../1.0_english/maltese_news_headlines/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: maltese_news_headlines
+doc_to_text: "{{text}}\n\nIkteb titolu bil-Malti għall-artiklu tal-aħbarjiet t'hawn fuq:"
+metadata:
+  version: 1.0_maltese

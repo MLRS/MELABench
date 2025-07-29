@@ -1,0 +1,6 @@
+include: ../../1.0_english/taxi1500/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: taxi1500_mlt
+doc_to_text: "Is-suġġett tal-vers \"{{text}}\" huwa"

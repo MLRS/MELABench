@@ -1,0 +1,8 @@
+include: ../../1.0_english/sentiment/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: sentiment_mlt
+doc_to_text: "{{text}}\nIs-sentiment huwa pożittiv jew negattiv?"
+metadata:
+  version: 1.0_maltese

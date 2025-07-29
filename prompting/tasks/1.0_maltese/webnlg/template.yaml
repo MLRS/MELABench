@@ -1,0 +1,8 @@
+include: ../../1.0_english/webnlg/template.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: webnlg_mlt
+doc_to_text: "Ivverbalizza bil-Malti t-tripli li ġejjin separati b'virgola: {{modified_triple_sets.mtriple_set[0] | join(', ')}}"
+metadata:
+  version: 1.0_maltese

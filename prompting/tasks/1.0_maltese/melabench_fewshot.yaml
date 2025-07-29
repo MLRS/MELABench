@@ -1,0 +1,3 @@
+include: ../1.0_english/melabench_fewshot.yaml
+metadata:
+  version: 1.0_maltese

@@ -1,0 +1,8 @@
+include: ../../1.0_english/flores200/template_eng-mlt.yaml
+tag:
+  - melabench_zeroshot
+  - melabench_fewshot
+task: flores200_eng-mlt
+doc_to_text: "\"{{sentence_eng_Latn}}\"\n\nIt-test preċedenti huwa bl-Ingliż. Din hija traduzzjoni għall-Malti:"
+metadata:
+  version: 1.0_maltese

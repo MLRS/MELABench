@@ -1,6 +1,0 @@
-include: template_mt-en.yaml
-tag:
-  - zero_shot_maltese_instruction
-  - few_shot_maltese_instruction
-task: flores200_mt-en (Maltese instruction)
-doc_to_text: "\"{{sentence_mlt_Latn}}\"\n\nIt-test preċedenti huwa bil-Malti. Din hija traduzzjoni għall-Ingliż:"
